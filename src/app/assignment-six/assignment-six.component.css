@@ -1,0 +1,15 @@
+.container {
+  margin-top: 30px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.btn-default {
+  border-color: darkgray;
+}
+.form-control.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.help-block {
+  color: red;
+}

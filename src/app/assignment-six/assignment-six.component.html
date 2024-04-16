@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2"
+    ></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="form-group">
+          <label for="email">Mail Address</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+            email
+            #email="ngModel"
+          /><span class="help-block" *ngIf="!email.valid && email.touched"
+            >Please enter a valid email</span
+          >
+        </div>
+        <div class="form-group">
+          <label for="secret">Choose Subscriptions</label>
+          <select
+            id="secret"
+            class="form-control"
+            [ngModel]="subscription"
+            name="secret"
+          >
+            <option value="basic">Basic</option>
+            <option value="advance">Advance</option>
+            <option value="pro">Pro Seubscription</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            ngModel
+            name="password"
+            #password="ngModel"
+            required
+          />
+          <span class="help-block" *ngIf="!password.valid && password.touched"
+            >Password should not be empty</span
+          >
+        </div>
+        <button class="btn btn-success" type="submit" [disabled]="!f.touched">
+          Submit
+        </button>
+        <p class="help-block" *ngIf="showWarning">
+          Please check the form validation before submit
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
