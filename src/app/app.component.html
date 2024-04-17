@@ -6,10 +6,16 @@
   <app-form-basic *ngIf="showBasic"></app-form-basic>
 </div>
 <div class="container">
-  <br />
+  <hr />
   <button (click)="showAssignment = !showAssignment" class="btn btn-info">
     Assignment Six
   </button>
-  <hr />
   <app-assignment-six *ngIf="showAssignment"></app-assignment-six>
+</div>
+<div class="container">
+  <hr />
+  <button (click)="showReactive = !showReactive" class="btn btn-success">
+    Reactive Form Example
+  </button>
+  <app-form-reactive *ngIf="showReactive"></app-form-reactive>
 </div>

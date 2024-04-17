@@ -8,5 +8,6 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   showBasic = false;
-  showAssignment = true;
+  showAssignment = false;
+  showReactive = true;
 }
