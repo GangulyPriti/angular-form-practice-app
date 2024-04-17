@@ -19,3 +19,13 @@
   </button>
   <app-form-reactive *ngIf="showReactive"></app-form-reactive>
 </div>
+<div class="container">
+  <hr />
+  <button
+    (click)="showAssignmentSeven = !showAssignmentSeven"
+    class="btn btn-secondary"
+  >
+    Assignment Seven
+  </button>
+  <app-assignment-seven *ngIf="showAssignmentSeven"></app-assignment-seven>
+</div>

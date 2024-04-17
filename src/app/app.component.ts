@@ -9,5 +9,6 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   showBasic = false;
   showAssignment = false;
-  showReactive = true;
+  showReactive = false;
+  showAssignmentSeven = true;
 }

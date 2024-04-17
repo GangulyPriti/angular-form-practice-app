@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormBasicComponent } from './form-basic/form-basic.component';
 import { AssignmentSixComponent } from './assignment-six/assignment-six.component';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
+import { AssignmentSevenComponent } from './assignment-seven/assignment-seven.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FormReactiveComponent } from './form-reactive/form-reactive.component';
     FormBasicComponent,
     AssignmentSixComponent,
     FormReactiveComponent,
+    AssignmentSevenComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
