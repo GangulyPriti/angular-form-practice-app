@@ -12,7 +12,7 @@ export class AssignmentSevenComponent implements OnInit {
   projectform: FormGroup;
   forbiddenName = 'Test';
   ChangedStatus = 'INVALID';
-  ngOnInit(): void {
+  constructor() {
     this.projectform = new FormGroup({
       projectname: new FormControl(
         null,
@@ -22,17 +22,32 @@ export class AssignmentSevenComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       projectstatus: new FormControl('Critical'),
     });
+  }
+  ngOnInit(): void {
+    // this.projectform = new FormGroup({
+    //   projectname: new FormControl(
+    //     null,
+    //     [Validators.required, this.forbiddenNames.bind(this)],
+    //     this.validateName
+    //   ),
+    //   email: new FormControl(null, [Validators.required, Validators.email]),
+    //   projectstatus: new FormControl('Critical'),
+    // });
     this.projectform.statusChanges.subscribe((status) => {
       console.log(status);
       this.ChangedStatus = status;
     });
   }
   onSubmitForm() {
-    console.log('Form Submitted', this.projectform);
+    setTimeout(
+      () => console.log(' before If Form Submitted', this.projectform.value),
+      0
+    );
 
     if (this.ChangedStatus === 'VALID') {
-      // this.projectform.reset();
-      console.log('Form Submitted', this.projectform);
+      const obj = this.projectform.value;
+      console.log('After validation Form Submitted', obj);
+      this.projectform.reset();
     }
   }
   forbiddenNames(control: FormControl): { [s: string]: boolean } {
